@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>养殖场电气安全自查 · 隐患观察</title>
+<meta name="description" content="乡村小型养殖户：电气安全隐患科普自查清单 + 简易观察记录。只做科普与清单，不做带电维修，不卖改造工程。"/>
+<style>
+:root{--ink:#1c3328;--muted:#5a6d62;--line:#cfe0d6;--bg:#eef6f1;--card:#fbfefb;--accent:#2f6b52;--accent2:#5a9a6a;--warn:#9a6b20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65;background:radial-gradient(900px 420px at 10% -10%,#cfe8d8,transparent 55%),radial-gradient(700px 360px at 100% 0,#dcefd8,transparent 48%),var(--bg)}
+.top{position:sticky;top:0;z-index:10;background:rgba(238,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:900px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.brand{font-weight:800}.nav a{margin-left:6px;text-decoration:none;color:var(--ink);font-size:13px;padding:6px 10px;border-radius:999px}
+.nav a:hover{background:#fff;border:1px solid var(--line)}
+.wrap{max-width:900px;margin:0 auto;padding:18px 16px 56px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#e3f0e8;border:1px solid #b9d6c0;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.2}
+.lead{color:var(--muted);font-size:17px;max-width:42em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px}
+.btn-p{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}.btn-g{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-block{width:100%}
+.warn{margin:16px 0;padding:14px 16px;border-radius:14px;background:#fff8ee;border:1px solid #efd3a8;border-left:6px solid var(--warn)}
+.warn h2{margin:0 0 6px;font-size:16px;color:var(--warn)}
+.grid{display:grid;gap:12px}@media(min-width:760px){.g2{grid-template-columns:1.05fr .95fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(28,51,40,.05)}
+.card h2{margin:0 0 8px;font-size:18px}.card p,.card li{color:var(--muted)}
+.risk{padding:12px;border-radius:14px;background:#fff;border:1px dashed var(--line);text-align:center}
+.risk b{display:block;font-size:17px;color:var(--accent);margin-bottom:4px}
+.q{margin:0 0 10px;padding:10px 12px;background:#e3f0e8;border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
+.q cite{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:10px 10px 10px 46px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+label.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:#fff;cursor:pointer}
+label.ck input{margin-top:3px;width:18px;height:18px;accent-color:var(--accent)}
+.field{margin:0 0 10px}.field>span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.field textarea{min-height:70px;resize:vertical}
+.row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.bar{height:8px;background:#d7e8de;border-radius:999px;overflow:hidden;margin:6px 0 8px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#5a9a6a,var(--accent))}
+.msg{min-height:1.3em;font-weight:700}.ok{color:#0b6b4a}.err{color:#8b2e1a}
+.item{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;font-size:13px;background:#fff}.item b{display:block}
+.sec{margin-top:16px}footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.tl{border-left:3px solid #8fbc8f;margin:8px 0 0 6px;padding-left:14px}.tl li{margin:0 0 10px;list-style:none}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><div class="brand">电气安全自查 · 隐患观察</div><nav class="nav"><a href="#check">自查清单</a><a href="#obs">隐患观察</a><a href="#book">预约试填</a><a href="#hist">本机记录</a></nav></div></header>
+<main class="wrap">
+<section>
+  <div class="kicker">沈阳农业大学 · 电气工程方向 · 课程 MVP</div>
+  <h1>先自查隐患，再找持证的人</h1>
+  <p class="lead">给乡村<strong>小型养殖户</strong>：一张电气安全隐患科普自查清单，加上简易观察记录。只做科普与清单梳理，<strong>不做带电维修</strong>，不卖改造工程。</p>
+  <div class="chips"><span class="chip">姓名学号待补</span><span class="chip">养殖场电气安全自查清单·隐患观察轻台账</span><span class="chip">非检修 · 非工程报价</span></div>
+  <div class="cta"><a class="btn btn-p" href="#check">勾自查五项</a><a class="btn btn-g" href="#obs">记隐患观察</a></div>
+</section>
+<section class="warn">
+  <h2>边界三句（请先看）</h2>
+  <ul>
+    <li>只做安全科普、隐患清单勾选、布线优化<strong>咨询建议</strong>话术提示。</li>
+    <li><strong>不做带电维修实操</strong>；学生无电工执业证，正式检修请找持证电工。</li>
+    <li>不卖改造工程、不卖配电柜与传感器；记录只存在本机浏览器。</li>
+  </ul>
+</section>
+<section class="sec grid g3">
+  <div class="risk"><b>线路老化</b><span style="color:var(--muted);font-size:13px">胶皮裂、接头松，先记下来别硬碰</span></div>
+  <div class="risk"><b>私拉乱接</b><span style="color:var(--muted);font-size:13px">临时线、多插口，清单里勾清位置</span></div>
+  <div class="risk"><b>长期通电</b><span style="color:var(--muted);font-size:13px">增温/投喂设备昼夜开，观察发热异味</span></div>
+</section>
+<section class="sec grid g2">
+  <article class="card">
+    <h2>要对上的三件事</h2>
+    <blockquote class="q">厂区线路老化乱接，不知道怎么自查电气火灾隐患。<cite>第1周假设 · 不会自查</cite></blockquote>
+    <blockquote class="q">夜间增温、投喂设备长时间通电，隐患靠印象。<cite>第1周假设 · 长期通电场景</cite></blockquote>
+    <blockquote class="q">找不到便宜的专业咨询，又不敢自己碰电。<cite>第1周假设 · 咨询难找</cite></blockquote>
+  </article>
+  <article class="card">
+    <h2>三步</h2>
+    <ol class="steps">
+      <li>按五项自查清单勾清老化、乱接、长期通电等（只观察，不拆线）。</li>
+      <li>补一条隐患观察：位置、现象人话勾选、一句备注。</li>
+      <li>需要动手检修时，预约说明会提示联系<strong>持证电工</strong>；本页不报价施工。</li>
+    </ol>
+  </article>
+</section>
+<section class="sec card" id="check">
+  <h2>电气安全隐患自查（五项）</h2>
+  <p>五项都看过才能保存。目标：断电前先用眼睛和鼻子做一遍科普级自查。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <p id="barText" style="margin:0 0 10px;font-size:13px;color:var(--muted)">已看 0 / 5</p>
+  <form id="checkForm">
+    <label class="ck"><input type="checkbox" name="c1"/> 看过明敷线路胶皮是否开裂、接头是否裸露（只看，不拆）</label>
+    <label class="ck"><input type="checkbox" name="c2"/> 看过是否有私拉临时线、一个插排拖多个大功率设备</label>
+    <label class="ck"><input type="checkbox" name="c3"/> 看过增温/投喂等长期通电设备周围是否有焦糊味或烫手（断电后摸外壳）</label>
+    <label class="ck"><input type="checkbox" name="c4"/> 棚号/区域已写清，家人换班能对上</label>
+    <label class="ck"><input type="checkbox" name="c5"/> 边界自检：本页不做带电维修、不卖改造工程、正式检修找持证电工</label>
+    <div class="row2">
+      <label class="field"><span>棚 / 区域</span><input name="area" placeholder="例如：育肥东棚配电箱旁"/></label>
+      <label class="field"><span>填写人</span><input name="who" placeholder="户主 / 家属"/></label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>本周最担心的一类</span>
+        <select name="focus" required>
+          <option value="">请选择</option>
+          <option>线路老化</option>
+          <option>私拉乱接</option>
+          <option>长期通电设备</option>
+          <option>三类都看过</option>
+        </select>
+      </label>
+      <label class="field"><span>自查日期</span><input type="date" name="day"/></label>
+    </div>
+    <button class="btn btn-p btn-block" type="submit">保存自查到本机</button>
+    <p class="msg" id="checkMsg"></p>
+  </form>
+</section>
+<section class="sec card" id="obs">
+  <h2>隐患观察（一天一笔）</h2>
+  <p>人话勾选。发现异常：断电、远离，联系持证电工——本页不教带电操作。</p>
+  <form id="obsForm">
+    <div class="row2">
+      <label class="field"><span>观察时间</span><input type="datetime-local" name="when" required/></label>
+      <label class="field"><span>位置</span><input name="area" required placeholder="与上面自查同一区域"/></label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>现象类型</span>
+        <select name="kind" required>
+          <option value="">请选择</option>
+          <option>线路老化相关</option>
+          <option>私拉乱接相关</option>
+          <option>长期通电发热/异味</option>
+          <option>其他（只写观察，不写修法）</option>
+        </select>
+      </label>
+      <label class="field"><span>观察结论（科普级）</span>
+        <select name="see" required>
+          <option value="">请选择</option>
+          <option>暂未发现明显异常</option>
+          <option>有可疑点，已记下位置，待持证电工看</option>
+          <option>当时没看清，稍后补</option>
+        </select>
+      </label>
+    </div>
+    <label class="field"><span>一句备注</span><textarea name="note" placeholder="例如：东墙临时线拖地；插排发烫已断电。不写怎么改线。"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">保存观察记录</button>
+    <p class="msg" id="obsMsg"></p>
+  </form>
+</section>
+<section class="sec card">
+  <h2>本周节奏</h2>
+  <ul class="tl">
+    <li><strong>Day1–2</strong>定自查五项与观察档位，写清「不做带电维修」边界。</li>
+    <li><strong>Day3–5</strong>上线绿色单页，电脑手机走通保存与手机号校验。</li>
+    <li><strong>Day6–7</strong>电话试填提纲，样本只计乡村小型养殖户主责人。</li>
+  </ul>
+</section>
+<section class="sec card" id="book">
+  <h2>预约两周试填</h2>
+  <p>学生电话说明怎么勾清单。上门只带科普表，不报价改线。</p>
+  <form id="bookForm">
+    <div class="row2">
+      <label class="field"><span>怎么称呼</span><input name="name" required placeholder="老张 / 户主"/></label>
+      <label class="field"><span>手机号</span><input name="phone" required pattern="1[3-9]\d{9}" placeholder="11位"/></label>
+    </div>
+    <label class="field"><span>最想先搞清的一件事</span><textarea name="wish" placeholder="例如：临时线能不能继续用；增温设备旁边发烫怎么办（需电工）"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">留下预约（仅存本机）</button>
+    <p class="msg" id="bookMsg"></p>
+    <p style="font-size:12px;color:var(--muted)">课程联系人：姓名/电话待学生补全 · 沈阳农业大学 · 电气工程方向</p>
+  </form>
+</section>
+<section class="sec card" id="hist">
+  <h2>本机最近记录</h2>
+  <div id="list"></div>
+  <button class="btn btn-g" type="button" id="clear">清空本机记录</button>
+</section>
+<footer>
+  <p>姓名学号待补 · 养殖场电气安全自查清单·隐患观察轻台账 · 路径 B</p>
+  <p>公网：<code>https://hjw-create.github.io/daiBu-dianqi-mvp/</code></p>
+</footer>
+</main>
+<script>
+(function(){
+  var KEY='daiBu_dianqi_v1';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(list){localStorage.setItem(KEY,JSON.stringify(list.slice(0,40)));render()}
+  function stamp(){var d=new Date(),p=function(n){return n<10?'0'+n:''+n};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())}
+  function render(){var list=load(),box=document.getElementById('list');if(!list.length){box.innerHTML="<p style='color:var(--muted);font-size:13px'>还没有记录。先勾自查或记一条观察。</p>";return}box.innerHTML=list.map(function(r){return "<div class='item'><b>"+r.type+" · "+r.at+"</b>"+r.summary+"</div>"}).join('')}
+  function bar(){var boxes=document.querySelectorAll('#checkForm input[type=checkbox]');var n=0;boxes.forEach(function(b){if(b.checked)n++});document.getElementById('bar').style.width=(n/boxes.length*100)+'%';document.getElementById('barText').textContent='已看 '+n+' / '+boxes.length}
+  document.querySelectorAll('#checkForm input[type=checkbox]').forEach(function(b){b.addEventListener('change',bar)});bar();
+  document.getElementById('checkForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var n=['c1','c2','c3','c4','c5'].filter(function(k){return fd.get(k)}).length;var msg=document.getElementById('checkMsg');if(n<5){msg.className='msg err';msg.textContent='五项都看过再保存。';return}var list=load();list.unshift({type:'隐患自查',at:stamp(),summary:'关注：'+fd.get('focus')+'；区域：'+(fd.get('area')||'未填')+'；日期：'+(fd.get('day')||'未填')+'；填写人：'+(fd.get('who')||'未填')});save(list);msg.className='msg ok';msg.textContent='自查已保存在本机。本页不教带电操作。'};
+  document.getElementById('obsForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var list=load();list.unshift({type:'隐患观察',at:stamp(),summary:'时间：'+fd.get('when')+'；位置：'+fd.get('area')+'；类型：'+fd.get('kind')+'；结论：'+fd.get('see')+'；备注：'+((fd.get('note')||'无').toString().trim()||'无')});save(list);document.getElementById('obsMsg').className='msg ok';document.getElementById('obsMsg').textContent='已保存。异常请断电并联系持证电工。'};
+  document.getElementById('bookForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var phone=(fd.get('phone')||'').toString();var msg=document.getElementById('bookMsg');if(!/^1[3-9]\d{9}$/.test(phone)){msg.className='msg err';msg.textContent='请填写11位手机号。';return}var list=load();list.unshift({type:'预约试填',at:stamp(),summary:'称呼：'+fd.get('name')+'；手机：'+phone+'；想搞清：'+((fd.get('wish')||'未写').toString().trim()||'未写')});save(list);msg.className='msg ok';msg.textContent='预约草稿在本机。试填不报价改线。';e.target.reset()};
+  document.getElementById('clear').onclick=function(){if(!confirm('清空本机记录？'))return;localStorage.removeItem(KEY);render()};
+  render();
+})();
+</script>
+</body>
+</html>
